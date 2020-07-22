@@ -1,0 +1,38 @@
+.card{
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+
+    &__side{
+        height: 50rem;
+        color: #fff;
+        font-size: 1.6rem;
+        text-align: left;
+
+        transition: all .8s;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        backface-visibility: hidden;
+
+        &--front{
+            background-color: #fff;
+        }
+
+        &--back{
+            background-image: linear-gradient(to right bottom, $secondary-color-light, $secondary-color-darnk) ;
+            transform: rotateY(180deg);
+        }
+    }
+
+    &:hover &__side{
+
+        &--front{
+            transform:rotateY(180deg);
+        }
+
+        &--back{
+            transform: rotateY(0);
+        }
+    }
+}
